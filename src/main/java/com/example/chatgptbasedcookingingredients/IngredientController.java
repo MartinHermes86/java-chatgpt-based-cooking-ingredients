@@ -2,6 +2,7 @@ package com.example.chatgptbasedcookingingredients;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class IngredientController {
 
+    @Autowired
+    private OpenAIService openAIService;
+
     @PostMapping
     String categorizeIngredient(@RequestBody String ingredient) {
-
-        // TODO: This should return "vegan", "vegetarian" or "regular" depending on the ingredient.
-
-        return "vegan";
+        return openAIService.categorizeIngredient(ingredient);
     }
-
 }
