@@ -16,6 +16,6 @@ public class ChatGPTRequest {
 
     public ChatGPTRequest(String ingredient){
         this.model = "gpt-3.5-turbo";
-        this.messages = List.of(new ChatGptMessage("Ist " + ingredient + "vegan, vegetarisch oder nicht?"));
+        this.messages = List.of(new ChatGptMessage("Sind/ist " + ingredient + "vegan, vegetarisch oder nicht?"));
     }
 }
